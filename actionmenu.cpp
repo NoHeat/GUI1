@@ -11,6 +11,11 @@ ActionMenu::ActionMenu(QWidget *parent) :
 {
     //This is the constructor that creates the instance of "ActionMenu" window
     ui->setupUi(this);
+    ui->pushButton_ChangeInventory->setToolTip("Lookup current items stored.");
+
+    ui->pushButton_CustomInput->setToolTip("Go to custom input menu to add new items.");
+
+    ui->pushButton_ShoppingList->setToolTip("Review shopping list options.");
 
 }
 

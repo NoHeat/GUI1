@@ -12,9 +12,12 @@ UserList::UserList(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //tooltips
+    ui->listView->setToolTip("Complete list by product name of current inventory.");
+
 
     mDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    mDatabase.setDatabaseName("F:/QTprojects/FridgeAssistKitV4/database6.sqlite");
+    mDatabase.setDatabaseName("C:/Users/Big Teaze Toys/Desktop/latestGUI/GUI1/database6.sqlite");
     if(!mDatabase.open()){
         QMessageBox::critical(this,"Error",mDatabase.lastError().text());
         return;

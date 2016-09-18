@@ -35,3 +35,6 @@ FORMS    += welcomescreen.ui \
     mycaledar.ui
 
 QMAKE_CXXFLAGS += -std=c++11
+
+RESOURCES += \
+    pictureslogosandicons.qrc

@@ -12,8 +12,31 @@ ChangeInventory::ChangeInventory(QWidget *parent) :
     ui(new Ui::ChangeInventory)
 {
     ui->setupUi(this);
+
+    //Tooltips section
+    ui->comboBoxBY->setToolTip("Custom search by categories.");
+    ui->pushButton_Add->setToolTip("To add an entry ensure to\ninclude a unique product ID.\nYou can make up your own Product ID.");
+    ui->pushButton_ListView->setToolTip("Go to list view options menu.");
+    ui->pushButton_Remove->setToolTip("To remove an item double click\n"
+                                      "one of the entries in the table\n"
+                                      "and then click remove.");
+    ui->pushButton_Update->setToolTip("To update an entry double click\n"
+                                      "one of the entries in the table\n"
+                                      "and change the data in the lines\n"
+                                      "provided. Lastly click update.");
+    ui->lineEdit_ProductId->setToolTip("Unique identifier of an item\n"
+                                       "used to add ad update entries.");
+    ui->lineEdit_ProductName->setToolTip("Product name as scanned or\n"
+                                         "provided by the user if is a\n "
+                                         "custom item.");
+    ui->lineEdit_ProductPrice->setToolTip("Product price as scanned or\n"
+                                          "as input by user.");
+    ui->lineEdit_ProductWeight->setToolTip("Item weight in milligramsm provided\n"
+                                           "by scanner or user.");
+    ui->lineSearch->setToolTip("Search bar that ignores capitalization.");
+
     mDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    mDatabase.setDatabaseName("F:/QTprojects/FridgeAssistKitV4/database6.sqlite");
+    mDatabase.setDatabaseName("C:/Users/Big Teaze Toys/Desktop/latestGUI/GUI1/database6.sqlite");
    if(!mDatabase.open()){
        QMessageBox::critical(this,"Error",mDatabase.lastError().text());
        return;
